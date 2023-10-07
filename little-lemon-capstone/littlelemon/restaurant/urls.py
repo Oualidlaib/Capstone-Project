@@ -1,7 +1,10 @@
 from django.urls import path
-from . import views
+from .views import bookingview, menuview, index
 
 
 urlpatterns = [
-  path('', views.index, name='index')
+  path('', index, name='index'),
+  path('booking/', bookingview.as_view()),
+  path('menu/', menuview.as_view()),
+  
 ]
